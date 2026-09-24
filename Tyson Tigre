@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CT Tyson Tigre | tysontigre.com.br</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        :root {
+            --preto: #050505;
+            --dourado: #D4AF37;
+            --dourado-claro: #F5D76E;
+            --vermelho: #900;
+            --branco: #fff;
+        }
+        body { background: var(--preto); color: var(--branco); overflow-x: hidden; }
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 999;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 3rem; background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+        }
+        .logo { height: 60px; }
+        .menu { display: flex; gap: 2.5rem; list-style: none; font-weight: 600; font-size: 0.95rem; }
+        .menu a { color: var(--branco); text-decoration: none; transition: color 0.3s; }
+        .menu a:hover { color: var(--dourado); }
+        .menu-toggle { display: none; font-size: 2rem; cursor: pointer; }
+        #inicio {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+                        url('https://i.imgur.com/9XQZ8pL.jpg') center/cover no-repeat;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 2rem; position: relative;
+        }
+        #inicio h1 {
+            font-size: clamp(3.5rem, 10vw, 6rem); font-weight: 900;
+            color: var(--dourado); text-shadow: 0 0 30px rgba(212,175,55,0.6);
+            letter-spacing: 4px; margin-bottom: 0.5rem;
+        }
+        #inicio p {
+            font-size: clamp(1.2rem, 3vw, 1.8rem); color: var(--branco);
+            letter-spacing: 2px; margin-bottom: 3rem; font-weight: 300;
+        }
+        .btn {
+            padding: 1rem 3rem; font-size: 1.1rem; font-weight: 700;
+            border: 2px solid var(--dourado); color: var(--dourado);
+            background: rgba(0,0,0,0.5); border-radius: 4px; text-decoration: none;
+            transition: all 0.4s ease; letter-spacing: 1px;
+        }
+        .btn:hover {
+            background: var(--dourado); color: var(--preto);
+            box-shadow: 0 0 25px rgba(212,175,55,0.7); transform: scale(1.05);
+        }
+        section { padding: 6rem 3rem; max-width: 1400px; margin: 0 auto; }
+        h2 {
+            font-size: 2.5rem; color: var(--dourado); margin-bottom: 2rem;
+            border-bottom: 2px solid var(--dourado); display: inline-block; padding-bottom: 0.5rem;
+        }
+        .card {
+            background: linear-gradient(145deg, #111, #222);
+            border: 1px solid rgba(212,175,55,0.3); border-radius: 8px;
+            padding: 2rem; margin-bottom: 1.5rem; transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--dourado); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        #sobre p { font-size: 1.1rem; line-height: 1.8rem; margin-bottom: 1rem; color: #ddd; }
+        .destaque { color: var(--dourado); font-weight: 700; }
+        .treino h3 { color: var(--dourado); margin-bottom: 0.8rem; font-size: 1.3rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid #333; }
+        th { color: var(--dourado); }
+        .contato-item { margin-bottom: 1rem; font-size: 1.1rem; }
+        .contato-item span { color: var(--dourado); font-weight: 700; display: inline-block; width: 100px; }
+        footer {
+            text-align: center; padding: 2rem; border-top: 1px solid #222;
+            color: #666; margin-top: 3rem;
+        }
+        footer span { color: var(--dourado); font-weight: 700; }
+        @media (max-width: 768px) {
+            nav { padding: 1rem; }
+            .menu {
+                position: absolute; top: 100%; left: 0; width: 100%;
+                flex-direction: column; background: rgba(0,0,0,0.95);
+                padding: 1rem; display: none;
+            }
+            .menu.active { display: flex; }
+            .menu-toggle { display: block; }
+            section { padding: 4rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul class="menu" id="menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#treinos">Treinos</a></li>
+        <li><a href="#horarios">Horários</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="menu-toggle" id="toggle">☰</div>
+</nav>
+<section id="inicio">
+    <h1>CT TYSON TIGRE</h1>
+    <p>ENTRE PARA A ELITE DOS CAMPEÕES</p>
+    <a href="#contato" class="btn">AGENDE SUA AULA</a>
+</section>
+<section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Eu sou <span class="destaque">Tyson Tigre</span>, bicampeão mundial de boxe, multi-campeão de fisiculturismo e empresário. Aos 10 anos morava em uma caixa d'água abandonada no bairro da Gameleira, Ilha de Itaparica. Hoje, transformo vidas através do esporte.</p>
+    <p>O <span class="destaque">CT Tyson Tigre</span> não é apenas uma academia — é onde se forjam campeões. Aqui não existe atalho: existe esforço, disciplina e resultado. <span class="destaque">1% Todo Dia.</span> O resto é consequência.</p>
+    <p>Venha treinar com quem sabe o que é lutar e vencer.</p>
+</section>
+<section id="treinos">
+    <h2>Nossos Treinos</h2>
+    <div class="grid">
+        <div class="card treino">
+            <h3>🥊 Boxe</h3>
+            <p>Técnica, condicionamento, estratégia e combate. Treine como um verdadeiro lutador.</p>
+        </div>
+        <div class="card treino">
+            <h3>🏋️ Musculação</h3>
+            <p>Ganho de massa, força e definição com orientação profissional e método comprovado.</p>
+        </div>
+        <div class="card treino">
+            <h3>👤 Aulas Particulares</h3>
+            <p>Treino exclusivo, planejado para você, com horário agendado diretamente com a equipe.</p>
+        </div>
+        <div class="card treino">
+            <h3>👥 Aulas Coletivas</h3>
+            <p>Energia de grupo, superação e evolução junto com outros guerreiros.</p>
+        </div>
+    </div>
+</section>
+<section id="horarios">
+    <h2>Horários e Localização</h2>
+    <p><strong>Endereço:</strong> Av. Getúlio Vargas, 148 — Jardim Ângelo, Arujá – SP</p>
+    <p><strong>Funcionamento:</strong> 05h30 às 22h — Atendimento personalizado com horário agendado</p>
+    <table>
+        <tr><th>Dia</th><th>Horário</th><th>Modalidade</th></tr>
+        <tr><td>Segunda</td><td>19:00</td><td>Aula Coletiva</td></tr>
+        <tr><td>Terça</td><td>05:30</td><td>Aula Coletiva</td></tr>
+        <tr><td>Quarta</td><td>19:00</td><td>Aula Coletiva</td></tr>
+        <tr><td>Quinta</td><td>05:30</td><td>Aula Coletiva</td></tr>
+        <tr><td>Sexta</td><td>19:00</td><td>Aula Coletiva</td></tr>
+        <tr><td>Seg–Sex</td><td>Horário agendado</td><td>Aula Particular</td></tr>
+    </table>
+</section>
+<section id="resultados">
+    <h2>Resultados Reais</h2>
+    <p>Transformações que falam por si. Aqui o trabalho é sério e o resultado aparece.</p>
+    <div class="grid">
+        <div class="card">
+            <h3>🏆 Evolução Constante</h3>
+            <p>1% Todo Dia. O resto é consequência.</p>
+        </div>
+        <div class="card">
+            <h3>🥊 Título Mundial</h3>
+            <p>Duas vezes campeão mundial de boxe. Disciplina vence sempre.</p>
+        </div>
+        <div class="card">
+            <h3>💪 Fisiculturismo</h3>
+            <p>Multi-campeão. O palco é o reflexo do que acontece no treino.</p>
+        </div>
+    </div>
+</section>
+<section id="contato">
+    <h2>Contato</h2>
+    <div class="contato-item"><span>📞 WhatsApp:</span> (11) 9XXXX-XXXX</div>
+    <div class="contato-item"><span>📷 Instagram:</span> @cttysentigre</div>
+    <div class="contato-item"><span>📍 Endereço:</span> Av. Getúlio Vargas, 148 — Jardim Ângelo, Arujá – SP</div>
+    <div class="contato-item"><span>🌐 Site:</span> tysontigre.com.br</div>
+    <br>
+    <a href="https://wa.me/SEUNUMERO" target="_blank" class="btn">📱 Falar no WhatsApp</a>
+</section>
+<footer>
+    <p><span>CT TYSON TIGRE</span> — Todos os direitos reservados © 2026</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem;">1% Todo Dia. O resto é consequência.</p>
+</footer>
+<script>
+    const toggle = document.getElementById('toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => menu.classList.toggle('active'));
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => menu.classList.remove('active'));
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(ancora => {
+        ancora.addEventListener('click', e => {
+            e.preventDefault();
+            const alvo = document.querySelector(ancora.getAttribute('href'));
+            window.scrollTo({ top: alvo.offsetTop - 60, behavior: 'smooth' });
+        });
+    });
+</script>
+</body>
+</html>
